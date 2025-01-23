@@ -12,7 +12,7 @@ const Header = () => {
     <div>
       {/* Header */}
       <header className="border-b ">
-        <div className="container mx-auto px-2  h-16 flex items-center md:justify-between md:gap-16 gap-24">
+        <div className="container mx-auto px-2  h-16 flex items-center md:justify-between md:gap-16 gap-[72px]">
           <div className="block md:hidden">
             <Button
               variant="ghost"
