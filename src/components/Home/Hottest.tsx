@@ -1,13 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { Card } from "../ui/card";
-import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Card } from "../ui/card";
 
-import { Pagination } from "swiper/modules";
 import { useEffect, useState } from "react";
+import { Pagination } from "swiper/modules";
 
 const Hottest = () => {
   const [isClient, setIsClient] = useState(false);
@@ -43,7 +43,7 @@ const Hottest = () => {
       price: "$0.1232",
       marketCap: "$701M",
       bgClass: "bg-gray-900",
-      className: "hidden md:block",
+      className: "",
       image: "/image3.png",
     },
     {
@@ -51,39 +51,44 @@ const Hottest = () => {
       price: "$25.51",
       marketCap: "$988",
       bgClass: "bg-pink-500",
-      className: "hidden md:block",
+      className: "",
       image: "/image4.png",
     },
   ];
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center md:pt-0 pt-[20px]">
       {/* Trending/Hottest Section */}
-      <div className="mb-12 md:py-0 py-[30px] w-full max-w-[992px]">
+      <div className="md:mb-12 mb-5 md:py-0 w-full max-w-[992px]">
         <h2 className="text-2xl md:text-3xl font-bold mb-6">
           {isClient && window.innerWidth >= 768 ? "Hottest" : "Trending"}
         </h2>
         <div className="sm:hidden">
           <Swiper
-            slidesPerView={1} // Display one slide at a time on small screens
-            spaceBetween={32}
+            slidesPerView={1}
+            spaceBetween={16}
             loop={true}
-            centeredSlides={true}
+            initialSlide={0}
+            centeredSlides={false}
             autoplay={{
-              delay: 2500,
+              delay: 3000,
               disableOnInteraction: false,
             }}
             breakpoints={{
+              320: {
+                slidesPerView: 1.5,
+                spaceBetween: 16,
+              },
               640: {
-                slidesPerView: 1.5, // Show 1.5 cards on larger small screens (tablets)
-                spaceBetween: 32,
+                slidesPerView: 2,
+                spaceBetween: 24,
               },
               768: {
-                slidesPerView: 2, // Show 2 cards on medium screens (tablets and small desktops)
+                slidesPerView: 2,
                 spaceBetween: 32,
               },
               1024: {
-                slidesPerView: 3, // Show 3 cards on large screens (desktops)
+                slidesPerView: 3,
                 spaceBetween: 32,
               },
             }}
@@ -94,7 +99,7 @@ const Hottest = () => {
             modules={[Pagination]}
             className="mySwiper"
           >
-            {items?.map((item, i) => (
+            {items.map((item, i) => (
               <SwiperSlide key={i}>
                 <Card
                   key={i}
@@ -113,9 +118,11 @@ const Hottest = () => {
                   <div className="p-4">
                     <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center mr-5">
-                        <div className="font-medium">{item.name}</div>
+                        <div className="font-medium text-[14px]">
+                          {item.name}
+                        </div>
                         {item.verified && (
-                          <div className="text-blue-500">
+                          <div className="text-blue-500 text-[14px]">
                             <Image
                               width={30}
                               height={60}
@@ -128,18 +135,18 @@ const Hottest = () => {
                       </div>
                       {item.change && (
                         <span
-                          className={`flex items-center ${
-                            parseFloat(item.change.replace("%", "")) < 0
-                              ? "text-red-500"
-                              : "text-green-500"
+                          className={`flex items-center text-[14px] ${
+                            item.change === "0.59%"
+                              ? "text-green-500"
+                              : "text-red-500"
                           } mr-7`}
                         >
                           {/* Triangle */}
                           <div
-                            className={`w-0 h-0 border-l-[6px] mr-2 border-r-[6px] border-b-[10px] ${
-                              parseFloat(item.change.replace("%", "")) < 0
-                                ? "border-transparent border-t-red-500"
-                                : "border-transparent border-b-green-500"
+                            className={`w-0 h-0 border-l-[6px] mr-2 border-r-[6px] text-[14px] ${
+                              item.change === "0.59%"
+                                ? "border-b-[10px] border-transparent border-b-green-500"
+                                : "border-t-[10px] border-transparent border-t-red-500"
                             }`}
                           ></div>
                           {item.change}
@@ -148,21 +155,21 @@ const Hottest = () => {
                     </div>
                     <div className="grid grid-cols-2 gap-4">
                       <div>
-                        <p className="text-sm text-muted-foreground">Price</p>
-                        <p className="font-medium">{item.price}</p>
+                        <p className="font-medium text-[13px]">Price</p>
+                        <p className="font-medium text-[13px]">{item.price}</p>
                       </div>
                       <div>
-                        <p className="text-sm text-muted-foreground">
-                          Market Cap
+                        <p className=" font-medium text-[13px]">Market Cap</p>
+                        <p className="font-medium text-[13px]">
+                          {item.marketCap}
                         </p>
-                        <p className="font-medium">{item.marketCap}</p>
                       </div>
                     </div>
                   </div>
                 </Card>
               </SwiperSlide>
             ))}
-            <div className="swiper-pagination mt-5"></div>
+            <div className="swiper-pagination"></div>
           </Swiper>
         </div>
         <div className="hidden sm:grid md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -197,17 +204,17 @@ const Hottest = () => {
                   {item.change && (
                     <span
                       className={`flex items-center ${
-                        parseFloat(item.change.replace("%", "")) < 0
-                          ? "text-red-500"
-                          : "text-green-500"
+                        item.change === "0.59%"
+                          ? "text-green-500"
+                          : "text-red-500"
                       } mr-7`}
                     >
                       {/* Triangle */}
                       <div
-                        className={`w-0 h-0 border-l-[6px] mr-2 border-r-[6px] border-b-[10px] ${
-                          parseFloat(item.change.replace("%", "")) < 0
-                            ? "border-transparent border-t-red-500"
-                            : "border-transparent border-b-green-500"
+                        className={`w-0 h-0 border-l-[6px] mr-2 border-r-[6px] ${
+                          item.change === "0.59%"
+                            ? "border-b-[10px] border-transparent border-b-green-500"
+                            : "border-t-[10px] border-transparent border-t-red-500"
                         }`}
                       ></div>
                       {item.change}

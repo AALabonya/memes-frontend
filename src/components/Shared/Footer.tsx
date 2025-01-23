@@ -10,9 +10,9 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div className="pt-[30px]">
+    <div className=" mt-12">
       {/* Footer Navigation */}
-      <div className="grid grid-cols-3 md:flex md:justify-center md:space-x-6 gap-y-4 text-center mb-8">
+      <div className="flex flex-wrap justify-center space-x-6 gap-y-4 text-center mb-8">
         {["About", "Blog", "Jobs", "Press", "Accessibility", "Partners"].map(
           (item) => (
             <Link
@@ -27,7 +27,7 @@ const Footer = () => {
       </div>
 
       {/* Social Links */}
-      <div className="flex flex-wrap justify-center space-x-6 mb-8">
+      <div className="flex flex-wrap justify-center md:space-x-6 space-x-2 mb-8">
         {[
           { platform: "facebook", icon: <FaFacebookF /> },
           { platform: "instagram", icon: <FaInstagram /> },

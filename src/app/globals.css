@@ -83,7 +83,7 @@ body {
 .swiper-wrapper {
   height: max-content !important;
   width: max-content !important;
-  padding-bottom: 64px;
+  padding-bottom: 40px;
 }
 
 .swiper-pagination-bullet-active {

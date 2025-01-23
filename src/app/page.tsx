@@ -6,13 +6,21 @@ import Header from "@/components/Shared/Header";
 
 export default function Home() {
   return (
-    <div className="p-4 md:p-0">
+    <div>
       <Header />
-      <Hero />
-      <Hottest />
+      <div className="p-4 md:p-0">
+        {/* Hero Section  */}
+        <Hero />
 
-      <LearnMore />
-      <Footer />
+        {/* Hottest Section  */}
+        <Hottest />
+
+        {/* LearnMore Section  */}
+        <LearnMore />
+
+        {/* Footer Section  */}
+        <Footer />
+      </div>
     </div>
   );
 }
