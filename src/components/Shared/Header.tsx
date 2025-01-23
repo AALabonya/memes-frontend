@@ -11,8 +11,8 @@ const Header = () => {
   return (
     <div>
       {/* Header */}
-      <header className="border-b">
-        <div className="container mx-auto px-2  h-16 flex items-center md:justify-between gap-16">
+      <header className="border-b ">
+        <div className="container mx-auto px-2  h-16 flex items-center md:justify-between md:gap-16 gap-24">
           <div className="block md:hidden">
             <Button
               variant="ghost"
@@ -30,7 +30,7 @@ const Header = () => {
           </div>
 
           {/* Header search  */}
-          <div className="hidden md:flex flex-1 max-w-[300px] rounded-full mx-4 ml-[300px]">
+          <div className="hidden md:flex flex-1 max-w-[300px] rounded-full mx-4 lg:ml-[300px]">
             <div className="relative w-full rounded-full">
               <Search className="absolute left-2 top-3 h-4 w-4 text-muted-foreground rounded-full" />
               <Input
@@ -84,7 +84,7 @@ const Header = () => {
                 strokeLinejoin="round"
               />
             </svg>
-            <button className="bg-[#000] text-white rounded-md hover:bg-black/90 h-[48px] px-[24px]">
+            <button className="bg-[#000] text-[9px] text-md text-white rounded-md hover:bg-black/90 h-[48px] px-[24px]">
               Start Buying
             </button>
           </div>

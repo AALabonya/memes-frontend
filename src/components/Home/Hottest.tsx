@@ -57,7 +57,7 @@ const Hottest = () => {
   ];
 
   return (
-    <div className="flex justify-center md:pt-0 pt-[20px]">
+    <div className="flex justify-center md:pt-0 pt-[20px] px-0 md:px-24 lg:px-0 ">
       {/* Trending/Hottest Section */}
       <div className="md:mb-12 mb-5 md:py-0 w-full max-w-[1055px]">
         <h2 className="text-2xl md:text-3xl font-bold mb-6">

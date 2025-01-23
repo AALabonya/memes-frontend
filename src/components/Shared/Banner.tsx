@@ -7,23 +7,23 @@ const Hero = () => {
     <div className="lg:py-16 md:py-8 py-4">
       {/* Hero Section */}
       <div className=" flex justify-center ">
-        <div className="flex justify-center  md:flex-row flex-col md:gap-[40px] space-y-8 md:space-y-0 md:mb-12 mb-0 w-full max-w-[1100px]">
+        <div className="flex justify-center  lg:flex-row flex-col md:gap-[40px] space-y-8 md:space-y-0 md:mb-12 mb-0 w-full max-w-[1100px]">
           <div className="space-y-2 md:space-y-4">
             <div className="space-y-2">
-              <h1 className="text-[40px] md:text-6xl font-bold md:leading-[60px] leading-0 text-center md:text-left">
+              <h1 className="text-[40px] md:text-6xl font-bold md:leading-[60px] leading-0 text-center lg:text-left">
                 Buy Memes.
                 <br />
                 In Two Clicks.
               </h1>
-              <p className="md:text-[24px] text-[13px]  text-muted-foreground text-center md:text-left">
+              <p className="md:text-[24px] text-[13px]  text-muted-foreground text-center lg:text-left">
                 The fastest way to buy memes in just two clicks.
                 <br />
                 Under 1 minute to sign up and no wallet needed.
               </p>
             </div>
 
-            <div className="hidden md:grid md:grid-cols-2 gap-4 ">
-              <Card className="p-4 bg-gray-50 w-[348px]">
+            <div className="hidden md:grid md:grid-cols-2 gap-4 md:px-24 lg:px-0 px-0">
+              <Card className="p-4 bg-gray-50 lg:w-[348px]">
                 <div className="flex items-center space-x-2 mb-2">
                   <div className="h-2 w-2 rounded-full bg-green-500" />
                   <span className="text-sm text-muted-foreground">
@@ -64,7 +64,7 @@ const Hero = () => {
                 </div>
               </Card>
 
-              <Card className="p-4 bg-gray-50 w-[348px]">
+              <Card className="p-4 bg-gray-50 lg:w-[348px]">
                 <div className="flex items-center space-x-2 mb-2">
                   <div className="h-2 w-2 rounded-full bg-green-500" />
                   <span className="text-sm text-muted-foreground">
@@ -78,7 +78,7 @@ const Hero = () => {
 
           <div className="flex flex-col items-center">
             {/* Main Image */}
-            <div className="w-full max-w-[300px] h-auto md:w-[300px] md:ml-0 flex justify-center md:h-[195px] aspect-square rounded-t-md bg-[#C25353] relative">
+            <div className="w-full max-w-[580px] h-auto lg:w-[300px]  md:ml-0 flex justify-center md:h-[195px] aspect-square rounded-t-md bg-[#C25353] relative">
               <div className="absolute top-4 md:right-4 right-0">
                 <Image
                   width={60}
@@ -90,7 +90,7 @@ const Hero = () => {
             </div>
 
             {/* Info Card */}
-            <div className="block w-full max-w-[300px] h-auto md:h-[104px]">
+            <div className="block w-full max-w-[580px] h-auto md:h-[104px]">
               <div className="p-4 bg-white shadow-md rounded-md">
                 <div className="flex flex-row items-start md:items-center gap-[61px] mb-1">
                   <span className="font-medium text-[18px] md:text-[20px]">

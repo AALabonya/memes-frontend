@@ -26,7 +26,7 @@ const LearnMore = () => {
   ];
 
   return (
-    <div className="flex justify-center md:mb-24 mb-4">
+    <div className="flex justify-center md:mb-24 mb-4 px-0 md:px-24 lg:px-0">
       {/* Trending/Hottest Section */}
       <div className="mb:mb-12 md:py-0 w-full max-w-[1055px]">
         <h2 className="text-2xl md:text-3xl font-bold mb-6">Learn More</h2>
@@ -93,7 +93,7 @@ const LearnMore = () => {
         </div>
 
         {/* Desktop Grid Layout */}
-        <div className="hidden sm:grid md:grid-cols-4 gap-4">
+        <div className="hidden sm:grid md:grid-cols-2 lg:grid-cols-4 gap-4">
           {learnItems?.map((item, i) => (
             <Card
               key={i}
