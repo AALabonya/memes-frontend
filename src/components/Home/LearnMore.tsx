@@ -28,7 +28,7 @@ const LearnMore = () => {
   return (
     <div className="flex justify-center md:mb-24 mb-4">
       {/* Trending/Hottest Section */}
-      <div className="mb:mb-12 md:py-0 w-full max-w-[992px]">
+      <div className="mb:mb-12 md:py-0 w-full max-w-[1055px]">
         <h2 className="text-2xl md:text-3xl font-bold mb-6">Learn More</h2>
 
         {/* Swiper for mobile view */}

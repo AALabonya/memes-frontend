@@ -59,7 +59,7 @@ const Hottest = () => {
   return (
     <div className="flex justify-center md:pt-0 pt-[20px]">
       {/* Trending/Hottest Section */}
-      <div className="md:mb-12 mb-5 md:py-0 w-full max-w-[992px]">
+      <div className="md:mb-12 mb-5 md:py-0 w-full max-w-[1055px]">
         <h2 className="text-2xl md:text-3xl font-bold mb-6">
           {isClient && window.innerWidth >= 768 ? "Hottest" : "Trending"}
         </h2>
